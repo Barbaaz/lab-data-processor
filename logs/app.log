@@ -9,3 +9,7 @@
 2026-02-20 23:28:04,693 - INFO - Average value: 36.25
 2026-02-21 00:04:17,873 - INFO - Starting data processing with threshold 20.0
 2026-02-21 00:04:17,874 - INFO - Data written successfully to data/filtered_output.csv
+2026-02-21 00:44:08,709 - INFO - Starting data processing with threshold 20.0
+2026-02-21 00:44:08,728 - INFO - Database table ensured.
+2026-02-21 00:44:08,738 - INFO - 4 records inserted into database.
+2026-02-21 00:44:08,738 - INFO - Data written successfully to data/filtered_output.csv

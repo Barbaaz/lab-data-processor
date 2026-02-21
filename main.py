@@ -1,6 +1,7 @@
 import logging
 import argparse
 from processor import read_csv, filter_data, calculate_average, write_csv
+from database import create_table, insert_records
 
 
 logging.basicConfig(
@@ -31,6 +32,8 @@ def main():
 
     data = read_csv(args.input)
     filtered = filter_data(data, args.threshold)
+    create_table()
+    insert_records(filtered)
     average = calculate_average(filtered)
 
     output_path = "data/filtered_output.csv"
