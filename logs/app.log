@@ -13,3 +13,4 @@
 2026-02-21 00:44:08,728 - INFO - Database table ensured.
 2026-02-21 00:44:08,738 - INFO - 4 records inserted into database.
 2026-02-21 00:44:08,738 - INFO - Data written successfully to data/filtered_output.csv
+2026-02-21 01:01:29,969 - INFO - All records deleted from database.

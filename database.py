@@ -57,3 +57,19 @@ def fetch_all_records() -> list[tuple]:
     except Exception as e:
         logging.error(f"Error fetching records: {e}")
         raise
+
+def clear_table():
+    try:
+        conn = get_connection()
+        cursor = conn.cursor()
+
+        cursor.execute("DELETE FROM processed_data")
+
+        conn.commit()
+        conn.close()
+
+        logging.info("All records deleted from database.")
+
+    except Exception as e:
+        logging.error(f"Error clearing table: {e}")
+        raise

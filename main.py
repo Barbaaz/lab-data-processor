@@ -1,7 +1,7 @@
 import logging
 import argparse
 from processor import read_csv, filter_data, calculate_average, write_csv
-from database import create_table, insert_records, fetch_all_records
+from database import create_table, insert_records, fetch_all_records, clear_table
 
 
 logging.basicConfig(
@@ -30,6 +30,11 @@ def main():
         action="store_true",
         help="List stored records from database"
     )
+    parser.add_argument(
+        "--clear",
+        action="store_true",
+        help="Clear all records from database"
+    )
 
     args = parser.parse_args()
 
@@ -39,6 +44,11 @@ def main():
         print("\nStored Records:")
         for row in records:
             print(f"ID: {row[0]} | Record ID: {row[1]} | Value: {row[2]}")
+        return
+
+    if args.clear:
+        clear_table()
+        print("All records have been deleted.")
         return
 
     logging.info(f"Starting data processing with threshold {args.threshold}")
