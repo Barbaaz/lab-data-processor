@@ -1,3 +1,11 @@
 2026-02-20 23:10:31,588 - INFO - Starting data processing
 2026-02-20 23:10:31,588 - INFO - Filtered records: 0
 2026-02-20 23:10:31,588 - INFO - Average value: 0.0
+2026-02-20 23:22:22,935 - INFO - Starting data processing
+2026-02-20 23:22:22,942 - INFO - Filtered records: 5
+2026-02-20 23:22:22,942 - INFO - Average value: 32.6
+2026-02-20 23:28:04,693 - INFO - Starting data processing
+2026-02-20 23:28:04,693 - INFO - Filtered records: 4
+2026-02-20 23:28:04,693 - INFO - Average value: 36.25
+2026-02-21 00:04:17,873 - INFO - Starting data processing with threshold 20.0
+2026-02-21 00:04:17,874 - INFO - Data written successfully to data/filtered_output.csv
