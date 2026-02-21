@@ -43,3 +43,17 @@ def insert_records(records: list[dict]):
     except Exception as e:
         logging.error(f"Error inserting records: {e}")
         raise
+
+def fetch_all_records() -> list[tuple]:
+    try:
+        conn = get_connection()
+        cursor = conn.cursor()
+
+        cursor.execute("SELECT * FROM processed_data")
+        rows = cursor.fetchall()
+
+        conn.close()
+        return rows
+    except Exception as e:
+        logging.error(f"Error fetching records: {e}")
+        raise
