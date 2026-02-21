@@ -14,3 +14,7 @@
 2026-02-21 00:44:08,738 - INFO - 4 records inserted into database.
 2026-02-21 00:44:08,738 - INFO - Data written successfully to data/filtered_output.csv
 2026-02-21 01:01:29,969 - INFO - All records deleted from database.
+2026-02-21 01:25:36,775 - INFO - Starting data processing with threshold 20.0
+2026-02-21 01:25:36,779 - INFO - Data written successfully to data/filtered_output.csv
+2026-02-21 02:05:07,770 - INFO - Starting data processing with threshold 20.0
+2026-02-21 02:05:07,781 - INFO - Data written successfully to data/filtered_output.csv

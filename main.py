@@ -1,8 +1,7 @@
 import logging
 import argparse
-from processor import read_csv, filter_data, calculate_average, write_csv
-from database import create_table, insert_records, fetch_all_records, clear_table
-
+from processor.csv_processor import read_csv, filter_data, calculate_average, write_csv
+from services.data_service import DataService
 
 logging.basicConfig(
     filename="logs/app.log",
@@ -12,6 +11,8 @@ logging.basicConfig(
 
 
 def main():
+    service = DataService()
+
     parser = argparse.ArgumentParser(description="Process laboratory data.")
     parser.add_argument(
         "--threshold",
@@ -39,7 +40,7 @@ def main():
     args = parser.parse_args()
 
     if args.list:
-        records = fetch_all_records()
+        records = service.list_records()
 
         print("\nStored Records:")
         for row in records:
@@ -47,7 +48,7 @@ def main():
         return
 
     if args.clear:
-        clear_table()
+        service.clear_records()
         print("All records have been deleted.")
         return
 
@@ -55,8 +56,9 @@ def main():
 
     data = read_csv(args.input)
     filtered = filter_data(data, args.threshold)
-    create_table()
-    insert_records(filtered)
+
+    service.save_records(filtered)
+    
     average = calculate_average(filtered)
 
     output_path = "data/filtered_output.csv"
